@@ -29,14 +29,25 @@
 \seealso{\code{\link{ahull}}, \code{\link{ashape}}.}
 \examples{
 # Random sample in the unit square
-x<-matrix(runif(100),nc=2)
+x <- matrix(runif(100), nc = 2)
 # Value of alpha
-alpha<-0.2
+alpha <- 0.2
 # alpha-convex hull
-ahull.obj<-ahull(x,alpha=alpha)
-# Plot including the alpha-convex hull in black, alpha-shape, 
-# voronoi diagram and Delaunay triangulation 
+ahull.obj <- ahull(x, alpha = alpha)
+# Plot including the alpha-convex hull in pink, alpha-shape in blue, 
+# sample points in black, voronoi diagram in green 
+# and Delaunay triangulation in red 
+plot(ahull.obj, do.shape = TRUE, wlines = "both", col = c(6, 4, 1, 2, 3))
+
+# Random sample  from a uniform distribution on a Koch snowflake 
+# with initial side length 1 and 3 iterations
+x <- rkoch(2000, side = 1, niter = 3)
+# Value of alpha
+alpha <- 0.05
+# Alpha-convex hull
+ahull.obj <- ahull(x, alpha = alpha)
 plot(ahull.obj)
+
   }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

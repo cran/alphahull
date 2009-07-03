@@ -25,8 +25,8 @@ anglesArc(v, theta)
 # Consider the arc such that v is the internal angle bisector that 
 # divides the angle 2*theta into two equal angles
 # The angles that the arc forms with the OX axis are pi/4 and 3*pi/4
-v<-c(0,1)
-theta<-pi/4
+v <- c(0,1)
+theta <- pi/4
 anglesArc(v,theta)
 }
 

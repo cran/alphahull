@@ -29,11 +29,11 @@ The function \code{\link[tripack]{tri.mesh}} from package \pkg{tripack} calculat
 # Simple example from TRIPACK
 data(tritest)
 # Delaunay triangulation and Voronoi diagram calculation
-delvor.obj<-delvor(tritest)
+delvor.obj <- delvor(tritest)
 
 # Random sample in the unit square
-x<-matrix(runif(20),nc=2)
+x <- matrix(runif(20), nc = 2)
 # Delaunay triangulation and Voronoi diagram calculation
-delvor.obj<-delvor(x)
+delvor.obj <- delvor(x)
 }
 \keyword{nonparametric}

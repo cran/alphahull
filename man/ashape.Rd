@@ -38,24 +38,25 @@ The function \code{\link{ashape}} returns (among other values) the matrix \code{
 \examples{
 # Uniform sample of size n=300 in the disc B(c,0.5)\B(c,0.25), 
 # with c=(0.5,0.5). 
-n<-300
-m<-0
-data<-matrix(0,n,2)
-while(m<n){
-x<-runif(1)
-y<-runif(1)
-if(((x-0.5)^2+(y-0.5)^2<=(0.5)^2 )&((x-0.5)^2+(y-0.5)^2>=(0.25)^2)){
-m<-m+1
-data[m,]<-c(x,y)
-}
-}
+n <- 300
+theta<-runif(n,0,2*pi)
+r<-sqrt(runif(n,0.25^2,0.5^2))
+x<-cbind(0.5+r*cos(theta),0.5+r*sin(theta))
 # Value of alpha
-alpha<-0.1
+alpha <- 0.1
 # alpha-shape 
-ashape.obj<-ashape(data,alpha=alpha)
+ashape.obj <- ashape(x, alpha = alpha)
 # If we change the value of alpha there is no need to compute
 # again the Delaunay triangulation and Voronoi Diagram
-alpha<-0.4
-ashape.obj.new<-ashape(ashape.obj$delvor.obj,alpha=alpha)
+alpha <- 0.4
+ashape.obj.new <- ashape(ashape.obj$delvor.obj, alpha = alpha)
+
+# Random sample  from a uniform distribution on a Koch snowflake 
+# with initial side length 1 and 3 iterations
+x <- rkoch(2000, side = 1, niter = 3)
+# Value of alpha
+alpha <- 0.05
+# alpha-shape 
+ashape.obj <- ashape(x, alpha = alpha)
 }
 \keyword{nonparametric}

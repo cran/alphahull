@@ -27,10 +27,10 @@ If \code{y} is NULL and \code{x} is an object of class \code{"delvor"}, then the
 \seealso{\code{\link{delvor}}, \code{\link{ahull}}.}
 \examples{
 # Random sample in the unit square
-x<-matrix(runif(100),nc=2)
+x <- matrix(runif(100), nc = 2)
 # Value of alpha
-alpha<-0.2
+alpha <- 0.2
 # Complement of the alpha-convex hull
-compl<-complement(x,alpha=alpha)
+compl <- complement(x, alpha = alpha)
 }
 \keyword{nonparametric}
