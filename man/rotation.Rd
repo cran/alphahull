@@ -19,7 +19,7 @@ rotation(v, theta)
  }
 \examples{
 # Rotation of angle pi/4 of the vector (0,1)
-rotation(v=c(0,1),theta=pi/4)
+rotation(v = c(0, 1), theta = pi/4)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -25,9 +25,9 @@
 \seealso{\code{\link{delvor}}.}
 \examples{
 # Random sample in the unit square
-x<-matrix(runif(100),nc=2)
+x <- matrix(runif(100), nc = 2)
 # Delaunay triangulation and Voronoi diagram
-delvor.obj<-delvor(x)
+delvor.obj <- delvor(x)
 # Plot Voronoi diagram and Delaunay triangulation 
 plot(delvor.obj)
 }

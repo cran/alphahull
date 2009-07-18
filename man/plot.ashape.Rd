@@ -26,24 +26,28 @@
 }
 \seealso{\code{\link{ashape}}.}
 \examples{
-# Uniform sample of size n=300 in the disc B(c,0.5)\B(c,0.25) 
-# with c=(0.5,0.5). 
-n<-300
-m<-0
-data<-matrix(0,n,2)
-while(m<n){
-x<-runif(1)
-y<-runif(1)
-if(((x-0.5)^2+(y-0.5)^2<=(0.5)^2 )&((x-0.5)^2+(y-0.5)^2>=(0.25)^2)){
-m<-m+1
-data[m,]<-c(x,y)
-}
-}
+# Uniform sample of size n=300 in the disc B(c, 0.5)\B(c, 0.25) 
+# with c=(0.5, 0.5). 
+n <- 300
+theta<-runif(n,0,2*pi)
+r<-sqrt(runif(n,0.25^2,0.5^2))
+x<-cbind(0.5+r*cos(theta),0.5+r*sin(theta))
 # Value of alpha
-alpha<-0.1
+alpha <- 0.1
 # alpha-shape 
-ashape.obj<-ashape(data,alpha=alpha)
-# Plot alpha-shape in red and Delaunay triangulation in black
-plot(ashape.obj)
+ashape.obj <- ashape(x, alpha = alpha)
+# Plot alpha-shape in blue, sample points in black, 
+# and Delaunay triangulation in red
+plot(ashape.obj, wlines= "del", col = c(4, 1, 2))
+
+# Random sample  from a uniform distribution on a Koch snowflake 
+# with initial side length 1 and 3 iterations
+x <- rkoch(2000, side = 1, niter = 3)
+# Value of alpha
+alpha <- 0.05
+# alpha-shape 
+ashape.obj <- ashape(x, alpha = alpha)
+# Plot alpha-shape in blue
+plot(ashape.obj, col = c(4, 1))
 }
 \keyword{nonparametric}

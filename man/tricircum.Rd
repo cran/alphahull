@@ -21,8 +21,8 @@ The function \code{\link{tricircum}} calls the Fortran function \code{delaunayci
 \references{Renka, R. J. (1996). Algorithm 751: TRIPACK: a constrained two-dimensional Delaunay triangulation package, \emph{ACM Trans. Math. Softw.}, 22(1), pp.1-8.}
 \examples{
 # Random sample in the unit square
-x<-runif(20)
-y<-runif(20)
-del<-tricircum(tri.mesh(x,y))
+x <- runif(20)
+y <- runif(20)
+del <- tricircum(tri.mesh(x, y))
 }
 \keyword{nonparametric}

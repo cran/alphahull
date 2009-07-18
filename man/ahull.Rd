@@ -41,11 +41,21 @@ Pateiro-Lopez, B. (2008). \emph{Set estimation under convexity type restrictions
 \seealso{\code{\link{plot.ahull}}.}
 \examples{
 # Random sample in the unit square
-x<-matrix(runif(100),nc=2)
+x <- matrix(runif(100), nc = 2)
 # Value of alpha
-alpha<-0.2
+alpha <- 0.2
 # Alpha-convex hull
-ahull.obj<-ahull(x,alpha=alpha)
+ahull.obj <- ahull(x, alpha = alpha)
+plot(ahull.obj)
+
+# Random sample  from a uniform distribution on a Koch snowflake 
+# with initial side length 1 and 3 iterations
+x <- rkoch(2000, side = 1, niter = 3)
+# Value of alpha
+alpha <- 0.05
+# Alpha-convex hull
+ahull.obj <- ahull(x, alpha = alpha)
+plot(ahull.obj)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
