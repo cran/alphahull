@@ -4,8 +4,9 @@
 %\VignettePackage{alphahull}
 
 \documentclass[nojss]{jss}
-
+\usepackage[latin1]{inputenc}
 %\usepackage{Sweave}
+%\usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
