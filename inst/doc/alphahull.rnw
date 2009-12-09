@@ -420,9 +420,9 @@ The package \pkg{alphahull} implements the algorithm in Table \ref{alg.hull}.
 %\item{Output $C_\alpha(\mathcal{X}_n)^c$.}
 %\end{enumerate}
 
-The function \code{ahull}, included in the library \pkg{alphahull}, computes the {\mbox{$\alpha$-convex}} hull of a given sample $\mathcal{X}_n$ for a given value of $\alpha>0$. The output of the function \code{ahull} is a list with six components. The components \code{x} and \code{alpha} store the input information whereas the component \code{ashape.obj} stores the output object from the function \code{ashape} (see Subsection \ref{sub3.2}) which is invoked during the computation of the {\mbox{$\alpha$-convex}} hull. Information about the open balls and halfplanes that define the complement of the {\mbox{$\alpha$-convex}} hull is stored in the component \code{complement}. For each row $i$, \code{complement[i, ]} contains the information relative to an open ball or halfplane of the complement. The first three columns are assigned to the characterization of the ball or halfplane $i$. Thus, if the row $i$ refers to an open ball, \code{complement[i, 1:3]} contains the center and radius of the ball. If the row $i$ refers to a halfplane, \code{complement[i, 1:3]} determines its equation. For the halfplane $y>a+bx$, \code{complement[i, 1:3] = (a, b, -1)}. In the same way, for the halfplane $y<a+bx$, \code{complement[i, 1:3]=(a, b, -2)}, for the halfplane $x>a$, \code{complement[i, 1:3]=(a, 0, -3)} and for the halfplane $x<a$, \code{complement[i, 1:3] = (a, 0, -4)}. On the other
+The function \code{ahull}, included in the library \pkg{alphahull}, computes the {\mbox{$\alpha$-convex}} hull of a given sample $\mathcal{X}_n$ for a given value of $\alpha>0$. The output of the function \code{ahull} is a list with six components. Information about the open balls and halfplanes that define the complement of the {\mbox{$\alpha$-convex}} hull is stored in the component \code{complement}. For each row $i$, \code{complement[i, ]} contains the information relative to an open ball or halfplane of the complement. The first three columns are assigned to the characterization of the ball or halfplane $i$. Thus, if the row $i$ refers to an open ball, \code{complement[i, 1:3]} contains the center and radius of the ball. If the row $i$ refers to a halfplane, \code{complement[i, 1:3]} determines its equation. For the halfplane $y>a+bx$, \code{complement[i, 1:3] = (a, b, -1)}. In the same way, for the halfplane $y<a+bx$, \code{complement[i, 1:3]=(a, b, -2)}, for the halfplane $x>a$, \code{complement[i, 1:3]=(a, 0, -3)} and for the halfplane $x<a$, \code{complement[i, 1:3] = (a, 0, -4)}. On the other
 hand, the  component \code{arcs} stores 
-the boundary of the {\mbox{$\alpha$-convex}}. Note that $\partial C_\alpha(\mathcal{X}_n)$ is formed by arcs of balls of radius $\alpha$ (besides possible isolated sample points). These arcs are determined by the intersections of some of the balls that define the complement of the {\mbox{$\alpha$-convex}} hull. The extremes of an arc can be written as $c+rA_\theta(v)$ and $c+rA_{-\theta}(v)$ where $c$ and $r$ represent the center and radius of the arc, respectively, and $A_\theta(v)$ represents the clockwise rotation of angle $\theta$ of a unitary vector $v$, see Figure \ref{fig:angle}. Thus, the structure of the matrix \code{arcs} is as follows. For each arc of the boundary, the first two columns (\code{c1}, \code{c2}) correspond to the coordinates of the center $c$. The third column \code{r} corresponds to the radius $\alpha$. The next two columns (\code{v.x}, \code{v.y}) correspond to the coordinates of the unitary vector $v$ and the angle $\theta$ is stored in the last column \code{theta}. The matrix \code{arcs} also stores the sample points that lie on the boundary of the {\mbox{$\alpha$-convex hull}} (rows where columns 3 to 6 are equal to zero). Finally, the boundary length of the {\mbox{$\alpha$-convex}} hull is stored in the component \code{length}.
+the boundary of the {\mbox{$\alpha$-convex}}. Note that $\partial C_\alpha(\mathcal{X}_n)$ is formed by arcs of balls of radius $\alpha$ (besides possible isolated sample points). These arcs are determined by the intersections of some of the balls that define the complement of the {\mbox{$\alpha$-convex}} hull. The extremes of an arc can be written as $c+rA_\theta(v)$ and $c+rA_{-\theta}(v)$ where $c$ and $r$ represent the center and radius of the arc, respectively, and $A_\theta(v)$ represents the clockwise rotation of angle $\theta$ of a unitary vector $v$, see Figure \ref{fig:angle}. Thus, the structure of the matrix \code{arcs} is as follows. For each arc of the boundary, the first two columns (\code{c1}, \code{c2}) correspond to the coordinates of the center $c$. The third column \code{r} corresponds to the radius $\alpha$. The next two columns (\code{v.x}, \code{v.y}) correspond to the coordinates of the unitary vector $v$ whereas the angle $\theta$ is stored in the sixth column \code{theta}. Finally, the indices of the end points of each arc are stored in the last two columns, \code{end1} and \code{end2}. For isolated points in the boundary of the {\mbox{$\alpha$-convex hull}}, columns 3 to 6 of the matrix \code{arcs} are equal to zero. The component \code{xahull} consists on a 2-column matrix with the coordinates of the original set of points besides possible new end points of the arcs in the boundary of the {\mbox{$\alpha$-convex hull}}. The component \code{alpha} stores the input information and the component \code{ashape.obj} stores the output object from the function \code{ashape} (see Subsection \ref{sub3.2}) which is invoked during the computation of the {\mbox{$\alpha$-convex}} hull. Finally, the boundary length of the {\mbox{$\alpha$-convex}} hull is stored in the component \code{length}.
 \begin{figure}
   \centering
  \scalebox{0.3}{
@@ -459,14 +459,14 @@ text(0.15,0.3,expression(italic(r)),cex=1.5)
   \caption{The extremes of an arc can be written as $c+rA_\theta(v)$ and $c+rA_{-\theta}(v)$, where $A_\theta(v)$ represents the clockwise rotation of angle $\theta$ of the unitary vector $v$.}
   \label{fig:angle}
 \end{figure}
-The function \code{plot.ahull} (S3 method for class 'ahull') produces a plot of the {\mbox{$\alpha$-convex}} hull. As with \code{plot.ashape} and \code{plot.delvor} some graphic parameters can control the plot appearance. The $\alpha$-shape can be added to the plot by specifying the argument \code{do.shape = TRUE}. Moreover, the Delaunay triangulation and the Voronoi diagram can be added to the plot by specifying the argument \code{wlines} (\code{wlines = "del"} for the Delaunay triangulation, \code{wlines = "vor"} for the Voronoi diagram or \code{wlines = "both"} for both plots). As an example, we have applied the function \code{ahull} to a uniform sample of size $n=100$ on the annulus with outer radius $0.5$ and inner radius $0.25$. The result is assigned to the object \code{alphahull}.
+The function \code{plot.ahull} (S3 method for class 'ahull') produces a plot of the {\mbox{$\alpha$-convex}} hull. As with \code{plot.ashape} and \code{plot.delvor} some graphic parameters can control the plot appearance. The $\alpha$-shape can be added to the plot by specifying the argument \code{do.shape = TRUE}. Moreover, the Delaunay triangulation and the Voronoi diagram can be added to the plot by specifying the argument \code{wlines} (\code{wlines = "del"} for the Delaunay triangulation, \code{wlines = "vor"} for the Voronoi diagram or \code{wlines = "both"} for both plots). As an example, we have applied the function \code{ahull} to a uniform sample of size $n=200$ on the annulus with outer radius $0.5$ and inner radius $0.25$. The result is assigned to the object \code{alphahull}.
 
 <<echo=true,results=hide>>=
-n <- 100
+n <- 200
 theta<-runif(n,0,2*pi)
 r<-sqrt(runif(n,0.25^2,0.5^2))
 x<-cbind(0.5+r*cos(theta),0.5+r*sin(theta))
-alpha <- 0.1
+alpha <- 0.15
 alphahull <- ahull(x, alpha = alpha)
 @
 
@@ -492,7 +492,7 @@ par(mfrow=c(1,1))
 print(plot(alphahull,col=c(6,rep(1,5)), xlab = "x-coordinate",ylab = "y-coordinate", main = expression(paste(alpha, "-hull"))))
 @
 }
-  \caption{Plot of the $\alpha$-convex hull of a uniform random sample of size $n=100$ on the annulus with outer radius $0.5$ and inner radius $0.25$. The value of  $\alpha$ is $0.1$.}
+  \caption{Plot of the $\alpha$-convex hull of a uniform random sample of size $n=200$ on the annulus with outer radius $0.5$ and inner radius $0.25$. The value of  $\alpha$ is $0.15$.}
   \label{fig:ahull2}
 \end{figure}
 The plot of the $\alpha$-convex hull together with some of the balls of radius $\alpha$ that define its complement, see Equation (\ref{JLc}), is displayed in the left-hand side of Figure \ref{fig:ahull3}. This plot is obtained by using the information of the component \code{arcs} as shown in the following code. The function \code{arc} included in the library plots an arc given its center, radius, initial angle and final angle.
@@ -533,6 +533,12 @@ Once $C_\alpha(\mathcal{X}_n)^c$ is constructed we can decide whether a given po
 <<echo=true>>=
 inahull(alphahull,c(0.5,0.5))
 inahull(alphahull,c(0.6,0.2))
+@
+
+Finally, the function \code{areahull} returns the area of the {\mbox{$\alpha$-convex}} hull.  The idea behind this function is that, by joining the end points of adjacent arcs in the boundary of the {\mbox{$\alpha$-convex}} hull, we can define polygons that help us to determine the area of the estimator. 
+
+<<echo=true>>=
+areaahull(alphahull)
 @
 
 \section{Example: the Koch snowflake}\label{sec:ex}
@@ -588,8 +594,8 @@ alphahull$ashape$length
 \centering
 <<fig=TRUE,echo=false,results=hide,width=12,height=6>>=lset(col.whitebg())
 par(mfrow=c(1,2))
-plot(alphahull$ashape, col = c(4, 1), xlab = "x-coordinate", ylab = "y-coordinate",main = expression(paste(alpha, "-shape")))
-plot(alphahull, col = c(6, rep(1, 5)), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-hull")))
+plot(alphahull$ashape, col = c(4, 1), xlab = "x-coordinate", ylab = "y-coordinate",main = expression(paste(alpha, "-shape")),asp=TRUE)
+plot(alphahull, col = c(6, rep(1, 5)), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-hull")),asp=TRUE)
 @
 \caption{Random sample of size $n=2000$ from a uniform distribution on a Koch snowflake with initial side length 1 and 3 iterations. Left: $\alpha$-shape for $\alpha=\Sexpr{alpha}$. Right: $\alpha$-convex hull for $\alpha=\Sexpr{alpha}$.}
 \label{fig:koch2}
@@ -608,9 +614,9 @@ alpha3=0.02
 alphashape3 <- ashape(alphashape1$delvor.obj, alpha = alpha3)
 
 par(mfrow=c(1,3))
-plot(alphashape1, col = c(4, 1), xlab = "", ylab = "")
-plot(alphashape2, col = c(4, 1), xlab = "", ylab = "")
-plot(alphashape3, col = c(4, 1), xlab = "", ylab = "")
+plot(alphashape1, col = c(4, 1), xlab = "", ylab = "",asp=TRUE)
+plot(alphashape2, col = c(4, 1), xlab = "", ylab = "",asp=TRUE)
+plot(alphashape3, col = c(4, 1), xlab = "", ylab = "",asp=TRUE)
 @
 \caption{Random sample of size $n=2000$ from a uniform distribution on a Koch snowflake with initial side length 1 and 3 iterations. From left to right, $\alpha$-shape for $\alpha=\Sexpr{alpha1},\Sexpr{alpha2},\Sexpr{alpha3}$.}
 \label{fig:koch3}
@@ -618,9 +624,9 @@ plot(alphashape3, col = c(4, 1), xlab = "", ylab = "")
 
 
 \section[Computational details]{Computational details}\label{sec4b}
-The results in this document were obtained using \proglang{R} 2.9.1 (\cite{Rcran}). The \pkg{alphahull} package is available from the Comprehensive \proglang{R} Archive
+The results in this document were obtained using \proglang{R} 2.10.0 (\cite{Rcran}). The \pkg{alphahull} package is available from the Comprehensive \proglang{R} Archive
 Network at the url \url{http://CRAN.R-project.org/package=alphahull}. This
-vignette describes version 0.1-1 of the package.
+vignette describes version 0.2-0 of the package.
 
 \section[Conclusions]{Conclusions}\label{sec5}
 In this document we have described the implementation in \proglang{R} of the $\alpha$-convex hull and of the $\alpha$-shape of a random sample of points in the plane. The package \pkg{alphahull} is the result of that implementation, which is based on efficient algorithms presented by \cite{Edels83}. The $\alpha$-convex hull and the $\alpha$-shape generalize the notion of convex hull and serve to characterize the shape of an unknown set based on random sample of points taken into it. The results obtained by \cite{Rodriguez06} on the behaviour of the $\alpha$-convex hull estimator give us the theoretical basis for using this geometrical construct as a support estimator. Apart from the support estimation problem, we think that these structures can play an important 
