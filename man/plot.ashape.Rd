@@ -26,7 +26,7 @@
 }
 \seealso{\code{\link{ashape}}.}
 \examples{
-# Uniform sample of size n=300 in the disc B(c, 0.5)\B(c, 0.25) 
+# Uniform sample of size n=300 in the annulus B(c, 0.5)\B(c, 0.25) 
 # with c=(0.5, 0.5). 
 n <- 300
 theta<-runif(n,0,2*pi)

@@ -32,22 +32,23 @@ function (x, add = FALSE, do.shape = FALSE, wlines = c("none",
         if (plot.dd) {
             if (!add) {
                 if (is.null(xlim)) 
-                  xlim <- range(x$x[, 1])
+                  xlim <- range(x$ashape.obj$x[, 1])
                 if (is.null(ylim)) 
-                  ylim <- range(x$x[, 2])
+                  ylim <- range(x$ashape.obj$x[, 2])
                 plot(0, 0, type = "n", xlim = xlim, ylim = ylim, 
                   axes = FALSE, ...)
                 axis(side = 1)
                 axis(side = 2)
             }
             if (wpoints) {
-                points(x$x, col = col[3], ...)
+                points(x$ashape.obj$x, col = col[3], ...)
             }
             if (number) {
-                xoff <- 0.02 * diff(range(x$x[, 1]))
-                yoff <- 0.02 * diff(range(x$x[, 2]))
-                text(x$x[, 1] + xoff, x$x[, 2] + yoff, 1:(dim(x$x)[1]), 
-                  col = col[6], ...)
+                xoff <- 0.02 * diff(range(x$ashape.obj$x[, 1]))
+                yoff <- 0.02 * diff(range(x$ashape.obj$x[, 2]))
+                text(x$ashape.obj$x[, 1] + xoff, x$ashape.obj$x[, 
+                  2] + yoff, 1:(dim(x$ashape.obj$x)[1]), col = col[6], 
+                  ...)
             }
         }
         else {
