@@ -1,11 +1,12 @@
 Package: alphahull
 Title: Generalization of the convex hull of a sample of points in the
         plane
-Version: 0.2-0
-Date: 2009-12-09
+Version: 0.2-1
+Date: 2009-10-21
 Author: Beatriz Pateiro-Lopez, Alberto Rodriguez-Casal.
 Maintainer: Beatriz Pateiro-Lopez <beatriz.pateiro@usc.es>
 Depends: tripack, sgeostat, splancs
+Suggests: deldir
 Description: This package computes the alpha-shape and alpha-convex
         hull of a given sample of points in the plane. The concepts of
         alpha-shape and alpha-convex hull generalize the definition of
@@ -15,6 +16,8 @@ Description: This package computes the alpha-shape and alpha-convex
         returns the Delaunay mesh of a given sample of points and its
         dual Voronoi diagram in one single object.
 License: file LICENSE
-Packaged: 2009-12-09 19:35:48 UTC; beatriz
+Packaged: 2011-10-21 14:09:41 UTC; administrador
 Repository: CRAN
-Date/Publication: 2009-12-10 20:40:18
+Date/Publication: 2011-10-23 12:08:40
+NeedsCompilation: yes
+License_restricts_use: yes
