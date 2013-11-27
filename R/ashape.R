@@ -70,7 +70,7 @@ function (x, y = NULL, alpha)
     l.max <- apply(cbind(dm1[is.edge], dm2[is.edge], dm * betw), 
         1, max, na.rm = TRUE)
     in.ashape <- (l.min <= alpha & alpha <= l.max)
-    edges <- matrix(t(aux[in.ashape, ]), byrow = TRUE, nc = 12)
+    edges <- matrix(t(aux[in.ashape, ]), byrow = TRUE, ncol = 12)
     colnames(edges) <- colnames(aux)
     ashape.obj <- list(edges = edges, length = sum(2 * dm[in.ashape]), 
         alpha = alpha, alpha.extremes = alpha.ext, delvor.obj = dd.obj, 

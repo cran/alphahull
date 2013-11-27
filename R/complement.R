@@ -53,7 +53,7 @@ function (x, y = NULL, alpha)
     n.case1.1 <- sum(case1.1)
     if (n.case1.1 > 0) {
         comp1.1 <- cbind(mesh[case1.1, "mx1"], mesh[case1.1, 
-            "my1"], dm1[case1.1], matrix(mesh[case1.1, ], nr = n.case1.1), 
+            "my1"], dm1[case1.1], matrix(mesh[case1.1, ], nrow = n.case1.1), 
             1, v.x.m1[case1.1], v.y.m1[case1.1], theta.m1[case1.1])
     }
     comp1.2 <- NULL
@@ -67,7 +67,7 @@ function (x, y = NULL, alpha)
         e.y <- pm.y[case1.2] - a1 * v.y.m1[case1.2]
         theta <- atan(dm[case1.2]/a1)
         comp1.2 <- cbind(e.x, e.y, alpha, matrix(mesh[case1.2, 
-            ], nr = n.case1.2), 1, v.x.m1[case1.2], v.y.m1[case1.2], 
+            ], nrow = n.case1.2), 1, v.x.m1[case1.2], v.y.m1[case1.2], 
             theta)
     }
     comp1.3.1 <- NULL
@@ -84,8 +84,8 @@ function (x, y = NULL, alpha)
         n.case1.3.1 <- sum(case1.3.1)
         if (n.case1.3.1 > 0) {
             comp1.3.1 <- cbind(e.x[case1.3.1], e.y[case1.3.1], 
-                alpha, matrix(matrix(mesh[case1.3, ], nr = n.case1.3)[case1.3.1, 
-                  ], nr = n.case1.3.1), 1, v.x.m1[case1.3][case1.3.1], 
+                alpha, matrix(matrix(mesh[case1.3, ], nrow = n.case1.3)[case1.3.1, 
+                  ], nrow = n.case1.3.1), 1, v.x.m1[case1.3][case1.3.1], 
                 v.y.m1[case1.3][case1.3.1], theta[case1.3.1])
         }
     }
@@ -94,7 +94,7 @@ function (x, y = NULL, alpha)
     n.case2.1 <- sum(case2.1)
     if (n.case2.1 > 0) {
         comp2.1 <- cbind(mesh[case2.1, "mx2"], mesh[case2.1, 
-            "my2"], dm2[case2.1], matrix(mesh[case2.1, ], nr = n.case2.1), 
+            "my2"], dm2[case2.1], matrix(mesh[case2.1, ], nrow = n.case2.1), 
             2, v.x.m2[case2.1], v.y.m2[case2.1], theta.m2[case2.1])
     }
     comp2.2 <- NULL
@@ -108,7 +108,7 @@ function (x, y = NULL, alpha)
         e.y <- pm.y[case2.2] - a1 * v.y.m2[case2.2]
         theta <- atan(dm[case2.2]/a1)
         comp2.2 <- cbind(e.x, e.y, alpha, matrix(mesh[case2.2, 
-            ], nr = n.case2.2), 2, v.x.m2[case2.2], v.y.m2[case2.2], 
+            ], nrow = n.case2.2), 2, v.x.m2[case2.2], v.y.m2[case2.2], 
             theta)
     }
     comp2.3.1 <- NULL
@@ -125,8 +125,8 @@ function (x, y = NULL, alpha)
         n.case2.3.1 <- sum(case2.3.1)
         if (n.case2.3.1 > 0) {
             comp2.3.1 <- cbind(e.x[case2.3.1], e.y[case2.3.1], 
-                alpha, matrix(matrix(mesh[case2.3, ], nr = n.case2.3)[case2.3.1, 
-                  ], nr = n.case2.3.1), 2, v.x.m2[case2.3][case2.3.1], 
+                alpha, matrix(matrix(mesh[case2.3, ], nrow = n.case2.3)[case2.3.1, 
+                  ], nrow = n.case2.3.1), 2, v.x.m2[case2.3][case2.3.1], 
                 v.y.m2[case2.3][case2.3.1], theta[case2.3.1])
         }
     }
@@ -134,7 +134,7 @@ function (x, y = NULL, alpha)
     case.h <- mesh[, "bp2"] == 1
     n.case.h <- sum(case.h)
     if (n.case.h > 0) {
-        comp.h <- matrix(nr = n.case.h, nc = 19)
+        comp.h <- matrix(nrow = n.case.h, ncol = 19)
         index <- which(case.h)
         for (i in 1:n.case.h) {
             if (mesh[index[i], "x1"] == mesh[index[i], "x2"]) {

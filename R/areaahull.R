@@ -5,6 +5,47 @@ function (x)
         cat("Argument is not of class ahull.\n")
         return(invisible())
     }
+    ah <- x
+    a <- ah$arcs[, 7:8]
+    arcsah <- ah$arcs
+    aa <- as.numeric(t(a))
+    nuevoa <- aa
+    miropos <- 2
+    newpos <- 3
+    fila <- 1
+    while (miropos < length(aa)) {
+        posigual <- which(aa[miropos] == aa)
+        posigual <- posigual[posigual != miropos]
+        if (posigual%/%2 == posigual/2) {
+            nuevoa[newpos:(newpos + 1)] <- aa[posigual:(posigual - 
+                1)]
+            nuevoa[posigual:(posigual - 1)] <- aa[newpos:(newpos + 
+                1)]
+            filan <- posigual/2
+            filold <- newpos%/%2 + 1
+            filan2 <- arcsah[filan, ]
+            filold2 <- arcsah[filold, ]
+            arcsah[filan, ] <- filold2
+            arcsah[filold, ] <- filan2
+        }
+        else {
+            nuevoa[newpos:(newpos + 1)] <- aa[posigual:(posigual + 
+                1)]
+            nuevoa[posigual:(posigual + 1)] <- aa[newpos:(newpos + 
+                1)]
+            filan <- posigual%/%2 + 1
+            filold <- newpos%/%2 + 1
+            filan2 <- arcsah[filan, ]
+            filold2 <- arcsah[filold, ]
+            arcsah[filan, ] <- filold2
+            arcsah[filold, ] <- filan2
+        }
+        aa <- nuevoa
+        miropos <- miropos + 2
+        newpos <- newpos + 2
+    }
+    arcsah <- cbind(arcsah[, 1:6], matrix(nuevoa, ncol = 2, byrow = T))
+    x$arcs <- arcsah
     witharea <- x$arcs[, 3] > 0
     if (sum(witharea) > 0) {
         ind <- x$arcs[witharea, 7:8]

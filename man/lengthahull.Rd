@@ -20,6 +20,7 @@ The function \code{lengthahull} is internally called by the function \code{\link
 }
 \seealso{\code{\link{ahull}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(100), nc = 2)
 # Value of alpha
@@ -28,6 +29,7 @@ alpha <- 0.2
 ahull.obj <- ahull(x, alpha = alpha)
 # Length of the alpha-convex hull
 ahull.obj$length
+}
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

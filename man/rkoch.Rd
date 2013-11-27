@@ -29,8 +29,10 @@ A 2-column matrix with the coordinates of generated points.
 
 \seealso{\code{\link{koch}}.}
 \examples{
+\dontrun{
 unifkoch <- rkoch(2000, side = 1, niter = 3)
 plot(unifkoch, asp = TRUE)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -12,11 +12,11 @@ function (x, y = NULL)
     n.arc <- max(tri.info[, 7:9])
     if (n.tri == 1) {
         aux1 <- cbind(matrix(tri.info[, c("arc1", "node2", "node3")], 
-            nc = 3, nr = 1), 1:n.tri, tri.info[, "tr1"])
+            ncol = 3, nrow = 1), 1:n.tri, tri.info[, "tr1"])
         aux2 <- cbind(matrix(tri.info[, c("arc2", "node1", "node3")], 
-            nc = 3, nr = 1), 1:n.tri, tri.info[, "tr2"])
+            ncol = 3, nrow = 1), 1:n.tri, tri.info[, "tr2"])
         aux3 <- cbind(matrix(tri.info[, c("arc3", "node1", "node2")], 
-            nc = 3, nr = 1), 1:n.tri, tri.info[, "tr3"])
+            ncol = 3, nrow = 1), 1:n.tri, tri.info[, "tr3"])
     }
     else {
         aux1 <- cbind(tri.info[, c("arc1", "node2", "node3")], 

@@ -19,6 +19,7 @@ areaahull(x)
 
 \seealso{\code{\link{ahull}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(500), nc = 2)
 # Value of alpha
@@ -28,7 +29,7 @@ ahull.obj <- ahull(x, alpha = alpha)
 # Area of the alpha-convex hull
 areaahull(ahull.obj)
 }
-
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{nonparametric}
