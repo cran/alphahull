@@ -10,8 +10,8 @@ This package computes the \eqn{\alpha}-shape and \eqn{\alpha}-convex hull of a g
 \tabular{ll}{
 Package: \tab alphahull\cr
 Type: \tab Package\cr
-Version: \tab 0.2-1\cr
-Date: \tab 2011-10-21\cr
+Version: \tab 1.0\cr
+Date: \tab 2013-11-27\cr
 License: \tab R functions: file LICENSE
 \cr
 }

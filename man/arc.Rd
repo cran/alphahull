@@ -18,12 +18,14 @@ arc(c, r, v, theta, ...)
 }
 \seealso{\code{\link{plot.ahull}}.}
 \examples{
+\dontrun{
 # Plot of the circumference of radius 1
 theta <- seq(0, 2*pi, length = 100)
 r <- 1
 plot(r*cos(theta), r*sin(theta), type = "l")
 # Add in red the arc between pi/4 and 3*pi/4
 arc(c(0,0), 1, c(0,1), pi/4, col = 2, lwd = 2)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

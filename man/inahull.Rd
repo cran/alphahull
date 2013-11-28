@@ -21,6 +21,7 @@ inahull(ahull.obj, p)
 }
 \seealso{\code{\link{ahull}}, \code{\link{complement}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(100), nc = 2)
 # Value of alpha
@@ -29,6 +30,7 @@ alpha <- 0.2
 ahull.obj <- ahull(x, alpha = alpha)
 # Check if the point (0.5, 0.5) belongs to the alpha-convex hull
 inahull(ahull.obj, p = c(0.5, 0.5))
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

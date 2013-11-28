@@ -26,6 +26,7 @@
 }
 \seealso{\code{\link{ashape}}.}
 \examples{
+\dontrun{
 # Uniform sample of size n=300 in the annulus B(c, 0.5)\B(c, 0.25) 
 # with c=(0.5, 0.5). 
 n <- 300
@@ -49,5 +50,6 @@ alpha <- 0.05
 ashape.obj <- ashape(x, alpha = alpha)
 # Plot alpha-shape in blue
 plot(ashape.obj, col = c(4, 1))
+}
 }
 \keyword{nonparametric}

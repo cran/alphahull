@@ -21,6 +21,7 @@ anglesArc(v, theta)
   \item{angs}{Numeric vector with two components.}
 }
 \examples{
+\dontrun{
 # Let v=c(0,1) and theta=pi/4
 # Consider the arc such that v is the internal angle bisector that 
 # divides the angle 2*theta into two equal angles
@@ -29,7 +30,7 @@ v <- c(0,1)
 theta <- pi/4
 anglesArc(v,theta)
 }
-
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{nonparametric}

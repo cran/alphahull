@@ -12,10 +12,10 @@ function (tri.obj, l1, l2, m, away)
     test <- mp + eps * v
     inconv <- in.convex.hull(tri.obj, test[1], test[2])
     if (inconv) {
-        dum <- mp - away * v
+        dum <- m - away * v
     }
     else {
-        dum <- mp + away * v
+        dum <- m + away * v
     }
     return(dum)
 }

@@ -28,6 +28,7 @@
 
 \seealso{\code{\link{ahull}}, \code{\link{ashape}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(100), nc = 2)
 # Value of alpha
@@ -47,8 +48,8 @@ alpha <- 0.05
 # Alpha-convex hull
 ahull.obj <- ahull(x, alpha = alpha)
 plot(ahull.obj)
-
-  }
+}
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 

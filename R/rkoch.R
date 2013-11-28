@@ -5,7 +5,7 @@ function (n, side = 3, niter = 5)
     square <- c(min(vert[, 1]), max(vert[, 1]), min(vert[, 2]), 
         max(vert[, 2]))
     m = 0
-    xy <- matrix(nr = n, nc = 2)
+    xy <- matrix(nrow = n, ncol = 2)
     while (m < n) {
         x <- runif(1, square[1], square[2])
         y <- runif(1, square[3], square[4])

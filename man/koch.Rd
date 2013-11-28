@@ -28,11 +28,13 @@ von Koch, H. (1904). Sur une courbe continue sans tangente, obtenue par une cons
 }
 \seealso{\code{\link{rkoch}}.}
 \examples{
+\dontrun{
 # The first four iterations of a Koch snowflake 
 # with side length of the initial equilateral triangle equal to 3.
 vertices <- koch(side = 2, niter = 4)
 plot(vertices[, 1], vertices[, 2], type = "l", asp = TRUE, 
 main = "Koch snowflake", xlab = "", ylab = "", col = 4)
 polygon(vertices[, 1], vertices[, 2] , col = 4)
+}
 }
 \keyword{nonparametric}

@@ -26,6 +26,7 @@ The function \code{\link[tripack]{tri.mesh}} from package \pkg{tripack} calculat
 \references{Renka, R. J. (1996). Algorithm 751: TRIPACK: a constrained two-dimensional Delaunay triangulation package, \emph{ACM Trans. Math. Softw.}, 22(1), pp.1-8.}
 \seealso{\code{\link{plot.delvor}}.}
 \examples{
+\dontrun{
 # Simple example from TRIPACK
 data(tritest)
 # Delaunay triangulation and Voronoi diagram calculation
@@ -35,5 +36,6 @@ delvor.obj <- delvor(tritest)
 x <- matrix(runif(20), nc = 2)
 # Delaunay triangulation and Voronoi diagram calculation
 delvor.obj <- delvor(x)
+}
 }
 \keyword{nonparametric}

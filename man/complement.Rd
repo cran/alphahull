@@ -26,11 +26,13 @@ If \code{y} is NULL and \code{x} is an object of class \code{"delvor"}, then the
 \references{Edelsbrunner, H., Kirkpatrick, D.G. and Seidel, R. (1983) \emph{On the shape of a set of points in the plane}. IEEE Transactions on Information Theory, Vol IT-29, No. 4.}
 \seealso{\code{\link{delvor}}, \code{\link{ahull}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(100), nc = 2)
 # Value of alpha
 alpha <- 0.2
 # Complement of the alpha-convex hull
 compl <- complement(x, alpha = alpha)
+}
 }
 \keyword{nonparametric}

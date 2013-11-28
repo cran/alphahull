@@ -36,6 +36,7 @@ The function \code{\link{ashape}} returns (among other values) the matrix \code{
 \references{Edelsbrunner, H., Kirkpatrick, D.G. and Seidel, R. (1983). On the shape of a set of points in the plane. \emph{IEEE Transactions on Information Theory}, 29(4), pp.551-559.}
 \seealso{\code{\link{plot.ashape}}, \code{\link{delvor}}.}
 \examples{
+\dontrun{
 # Uniform sample of size n=300 in the annulus B(c,0.5)\B(c,0.25), 
 # with c=(0.5,0.5). 
 n <- 300
@@ -58,5 +59,6 @@ x <- rkoch(2000, side = 1, niter = 3)
 alpha <- 0.05
 # alpha-shape 
 ashape.obj <- ashape(x, alpha = alpha)
+}
 }
 \keyword{nonparametric}

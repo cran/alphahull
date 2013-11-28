@@ -40,6 +40,7 @@ Rodriguez-Casal, R. (2007). Set estimation under convexity type assumptions. \em
 Pateiro-Lopez, B. (2008). \emph{Set estimation under convexity type restrictions}. Phd. Thesis. Universidad de Santiago de Compostela. ISBN 978-84-9887-084-8.}
 \seealso{\code{\link{plot.ahull}}.}
 \examples{
+\dontrun{
 # Random sample in the unit square
 x <- matrix(runif(100), nc = 2)
 # Value of alpha
@@ -74,6 +75,7 @@ alpha <- 0.05
 # Alpha-convex hull
 ahull.obj <- ahull(x, alpha = alpha)
 plot(ahull.obj)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
