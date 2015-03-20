@@ -35,7 +35,7 @@ The boundary of the \eqn{\alpha}-convex hull is formed by arcs of open balls of 
 }
 \references{Edelsbrunner, H., Kirkpatrick, D.G. and Seidel, R. (1983). On the shape of a set of points in the plane. \emph{IEEE Transactions on Information Theory}, 29(4), pp.551-559.
 
-Rodriguez-Casal, R. (2007). Set estimation under convexity type assumptions. \emph{Annales de l'I.H.P.- Probabilites \& Statistiques}, 43, pp.763-774.
+Rodriguez-Casal, R. (2007). Set estimation under convexity type assumptions. \emph{Annales de l'I.H.P.- Probabilites & Statistiques}, 43, pp.763-774.
 
 Pateiro-Lopez, B. (2008). \emph{Set estimation under convexity type restrictions}. Phd. Thesis. Universidad de Santiago de Compostela. ISBN 978-84-9887-084-8.}
 \seealso{\code{\link{plot.ahull}}.}

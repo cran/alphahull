@@ -23,7 +23,7 @@ If \code{y} is NULL and \code{x} is an object of class \code{"delvor"}, then the
 \value{
   \item{compl}{Output matrix. For each row \code{i},  \code{compl[i,]} contains the information relative to an open ball or halfplane of the complement of the \eqn{\alpha}-convex hull, see Details.}
  }
-\references{Edelsbrunner, H., Kirkpatrick, D.G. and Seidel, R. (1983) \emph{On the shape of a set of points in the plane}. IEEE Transactions on Information Theory, Vol IT-29, No. 4.}
+\references{Edelsbrunner, H., Kirkpatrick, D.G. and Seidel, R. (1983) On the shape of a set of points in the plane. \emph{IEEE Transactions on Information Theory}, 29(4), pp.551-559.}
 \seealso{\code{\link{delvor}}, \code{\link{ahull}}.}
 \examples{
 \dontrun{
