@@ -7,14 +7,15 @@
 This function calculates the area of the \eqn{\alpha}-convex hull of a sample of points.
 }
 \usage{
-areaahull(x)
+areaahull(x, timeout = 5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{Object of class \code{"ahull"}.}
+  \item{timeout}{A numeric specifying the maximum number of seconds the expression is allowed to run before being interrupted by the timeout.}
 }
 \value{
-\item{area}{Area of the \eqn{\alpha}-convex hull.}
+\item{area}{Area of the \eqn{\alpha}-convex hull. If the area cannot be computed, the output will be NA with a warning.}
 }
 
 \seealso{\code{\link{ahull}}.}

@@ -1,7 +1,7 @@
 \name{ashape}
 \alias{ashape}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{alpha-shape hull calculation}
+\title{alpha-shape calculation}
 \description{
 This function calculates the \eqn{\alpha}-shape of a given sample for \eqn{\alpha>0}.
 }

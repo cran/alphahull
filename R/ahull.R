@@ -314,8 +314,8 @@ function (x, y = NULL, alpha)
         num <- length(addp)
         if (num > 0) {
             mat.noforget <- cbind(matrix(ashape.obj$x[addp, 1:2], 
-                ncol = 2, byrow = FALSE), rep(0, num), rep(0, num), 
-                rep(0, num), rep(0, num), addp, addp)
+                ncol = 2, byrow = FALSE), rep(0, num), rep(0, 
+                num), rep(0, num), rep(0, num), addp, addp)
             ahull.arcs <- rbind(ahull.arcs, mat.noforget)
         }
     }
