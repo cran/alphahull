@@ -1,7 +1,7 @@
 areaahull <-
 function (x, timeout = 5) 
 {
-    area <- evalWithTimeout(try(areaahulleval(x), silent = TRUE), 
+    area <- withTimeout(try(areaahulleval(x), silent = TRUE), 
         timeout = timeout)
     if (!is.numeric(area)) {
         warning("Problem in area computation (Returns NA)")

@@ -1,11 +1,11 @@
-afeb12db3f504fe5b1142496faf9a195 *DESCRIPTION
+821dc0972686e673f5463337c05af823 *DESCRIPTION
 4bbdb0b26beff626e2ccc00f4de269a9 *LICENSE
-9e3eab139f543115981aef7d4f0b4f40 *NAMESPACE
+4027cc230543880c7b3c078d493de217 *NAMESPACE
 b5940136d03bd8cc6c65dce0adce4ea1 *R/ahull.R
 291bb5868d8e284518b3e06e2940fdbf *R/ahull_track.R
 939b4855249337c8c0f67386b9d768fa *R/anglesArc.R
 2d574e60d4223e2bf8b7127e54be5de5 *R/arc.R
-0d6fdeaa577b826e2ff22a52d07470ed *R/areaahull.R
+6d595e403d7c084d55334552de07a402 *R/areaahull.R
 7415616038f4b2533490866a918c4d58 *R/areaahulleval.R
 5f843d926ac0532abb6fc679df0fe046 *R/ashape.R
 c5bc959d3abde631d416e8aea5c3309b *R/complement.R
@@ -23,9 +23,9 @@ c00dce0f8ec3e3a930d4612c83f9594c *R/plot.delvor.R
 fe1bb8a8d0c28c2dd8e7d90bbdd1af07 *R/rkoch.R
 445274c6d98b5c7e7b82ee53c626daa7 *R/rotation.R
 f96abe0ef80e2c198c5fa60c93010ed1 *R/tricircum.R
-9871714c975e964d7b202adf9ffbb168 *build/vignette.rds
+4b7b9a846f535febb531b409e8a02b75 *build/vignette.rds
 b923d68894f7c097ce0d663c1f477e59 *inst/doc/alphahull.R
-2f85df9a800430df2ed18094820f8868 *inst/doc/alphahull.pdf
+b992ff83a031a13c47ed138db1e4b729 *inst/doc/alphahull.pdf
 d3c5e1d35f025efd12666946a0a89a86 *inst/doc/alphahull.rnw
 0499f13b6509e626a9186159519ed867 *man/ahull.Rd
 befc8cf73c9634a033540c902aec4cbe *man/ahull_track.Rd
@@ -50,6 +50,7 @@ ef33d20071e474c5632f69585d10fc6c *man/plot.delvor.Rd
 d87181cc65a745bca3ff8633b4d7adb8 *man/rkoch.Rd
 336c50a98bbd7a347c6f7ba080190121 *man/rotation.Rd
 53e89188a28fac9cb55f9cd9a2d997bd *man/tricircum.Rd
+df6004c624549fab4bbe107afe7342bf *src/alphahull_init.c
 ff1436ba796ed30f3dbe3bfed301711f *src/delaunaycircum.f
 b2a9d968b906be757e3213d14aee3610 *src/tripack.f
 d3c5e1d35f025efd12666946a0a89a86 *vignettes/alphahull.rnw

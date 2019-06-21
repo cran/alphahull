@@ -1,4 +1,4 @@
-useDynLib(alphahull)
+useDynLib(alphahull,.registration = TRUE)
 import(ggplot2)
 import(tripack)
 import(R.utils)

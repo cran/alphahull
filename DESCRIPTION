@@ -1,6 +1,6 @@
 Package: alphahull
-Version: 2.1
-Date: 2016-02-10
+Version: 2.2
+Date: 2019-06-19
 Title: Generalization of the Convex Hull of a Sample of Points in the
         Plane
 Author: Beatriz Pateiro-Lopez [aut, cre], Alberto Rodriguez-Casal, [aut].
@@ -16,7 +16,7 @@ Description: Computation of the alpha-shape and alpha-convex
         dual Voronoi diagram in one single object.
 License: file LICENSE
 NeedsCompilation: yes
-Packaged: 2016-02-15 10:57:14 UTC; beatriz
 License_restricts_use: yes
+Packaged: 2019-06-19 13:07:31 UTC; beatriz
 Repository: CRAN
-Date/Publication: 2016-02-15 13:47:04
+Date/Publication: 2019-06-21 17:30:03 UTC
