@@ -1,5 +1,4 @@
 ### R code from vignette source 'alphahull.rnw'
-### Encoding: ISO8859-1
 
 ###################################################
 ### code chunk number 1: alphahull.rnw:78-79

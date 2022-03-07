@@ -5,9 +5,9 @@ function (x, y = NULL, eps, nps = 20000, sc = 100)
     dat <- data.frame(location_long = X$x, location_lat = X$y)
     colnames(dat) <- c("location_long", "location_lat")
     np <- dim(dat)[1]
-    seg <- psp(dat[-np, 1], dat[-np, 2], dat[-1, 1], dat[-1, 
-        2], window = owin(range(dat[, 1]), range(dat[, 2])))
-    pseg <- runifpointOnLines(nps, seg)
+    seg <- spatstat.geom::psp(dat[-np, 1], dat[-np, 2], dat[-1, 1], dat[-1, 
+        2], window = spatstat.geom::owin(range(dat[, 1]), range(dat[, 2])))
+    pseg <- spatstat.random::runifpointOnLines(nps, seg)
     xah <- c(dat[, 1], pseg$x)
     yah <- c(dat[, 2], pseg$y)
     xah <- jitter(xah) * sc
