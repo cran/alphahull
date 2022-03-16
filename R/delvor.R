@@ -7,7 +7,16 @@ function (x, y = NULL)
         stop("At least three non-collinear points are required")
     }
     tri.obj <- tri.mesh(X)
-    tri.info <- tricircum(tri.obj)
+    tri <- triangles(tri.obj)
+    nt <- nrow(tri)
+    circenter <- matrix(nrow = nt, ncol = 2) 
+    colnames(circenter) <- c("circumx", "circumy")
+    for (i in 1:nt){
+		aux <- circum(c(x[tri[i, 1], 1], x[tri[i, 2], 1], x[tri[i, 3], 1]), c(x[tri[i, 1], 2], x[tri[i, 2], 2], x[tri[i, 3], 2]))
+		circenter[i, ] <- c(aux$x, aux$y)
+    }
+    tri.info<-cbind(tri, circenter)
+
     n.tri <- dim(tri.info)[1]
     n.arc <- max(tri.info[, 7:9])
     if (n.tri == 1) {

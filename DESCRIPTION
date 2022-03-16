@@ -1,6 +1,6 @@
 Package: alphahull
-Version: 2.3
-Date: 2022-03-07
+Version: 2.4
+Date: 2022-03-15
 Title: Generalization of the Convex Hull of a Sample of Points in the
         Plane
 Author: Beatriz Pateiro-Lopez [aut, cre], Alberto Rodriguez-Casal, [aut].
@@ -15,9 +15,8 @@ Description: Computation of the alpha-shape and alpha-convex
         triangulation. The package also includes a function that
         returns the Delaunay mesh of a given sample of points and its
         dual Voronoi diagram in one single object.
-License: file LICENSE
-NeedsCompilation: yes
-License_restricts_use: yes
-Packaged: 2022-03-07 11:31:13 UTC; beatriz
+License: ACM
+NeedsCompilation: no
+Packaged: 2022-03-15 10:42:51 UTC; beatriz
 Repository: CRAN
-Date/Publication: 2022-03-07 12:40:07 UTC
+Date/Publication: 2022-03-16 16:00:02 UTC

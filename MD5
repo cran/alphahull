@@ -1,6 +1,5 @@
-4e34b2696514d45b926a3bc83a27d59f *DESCRIPTION
-4bbdb0b26beff626e2ccc00f4de269a9 *LICENSE
-3ce27abedda04e25885fd8ab054cfb28 *NAMESPACE
+f2cacde8d740dc11c89344c40230f368 *DESCRIPTION
+ee6e568e6124646fc59d35dac3d45fbc *NAMESPACE
 b5940136d03bd8cc6c65dce0adce4ea1 *R/ahull.R
 beb61f7ee96cbc111b1df7f1d3619cd0 *R/ahull_track.R
 939b4855249337c8c0f67386b9d768fa *R/anglesArc.R
@@ -9,7 +8,7 @@ beb61f7ee96cbc111b1df7f1d3619cd0 *R/ahull_track.R
 7415616038f4b2533490866a918c4d58 *R/areaahulleval.R
 5f843d926ac0532abb6fc679df0fe046 *R/ashape.R
 c5bc959d3abde631d416e8aea5c3309b *R/complement.R
-e8ee24e5802eadd5ada52f135057365e *R/delvor.R
+c196557a1a369e1026193fbdb118b618 *R/delvor.R
 76692384a88f36947d5ce7a337264f74 *R/dummycoor.R
 4363ab5e645f2dc7a99a8d65c0fb00ba *R/dw.R
 1c81902db577c411f2465a554ab4f456 *R/dw_track.R
@@ -22,14 +21,13 @@ b3ea9873b64827621d16b32dc46cc04c *R/plot.ashape.R
 c00dce0f8ec3e3a930d4612c83f9594c *R/plot.delvor.R
 fe1bb8a8d0c28c2dd8e7d90bbdd1af07 *R/rkoch.R
 445274c6d98b5c7e7b82ee53c626daa7 *R/rotation.R
-f96abe0ef80e2c198c5fa60c93010ed1 *R/tricircum.R
 3ed721bcf3983535bcac67ff50238a9d *build/vignette.rds
 4998b6e119aac68b43de1cbf88cee1e0 *inst/doc/alphahull.R
-ec62f13ddd2e8c6529d891a9638f48d6 *inst/doc/alphahull.pdf
+39c078d61f0bfc62b63d45e1f362758a *inst/doc/alphahull.pdf
 d3c5e1d35f025efd12666946a0a89a86 *inst/doc/alphahull.rnw
 0499f13b6509e626a9186159519ed867 *man/ahull.Rd
 befc8cf73c9634a033540c902aec4cbe *man/ahull_track.Rd
-d8b028080142b358fe88a9cc32d1abef *man/alphahull-package.Rd
+005b09f011b052280cbe458a98b1c7d2 *man/alphahull-package.Rd
 4300b3aa6d0aa9fe9c6656518d3ce9d5 *man/anglesArc.Rd
 17d872daef316edbb2e58e4379c1f925 *man/arc.Rd
 0dbc0d6baac46a7ef7c151609e20b925 *man/areaahull.Rd
@@ -49,9 +47,5 @@ a1d1a5e1279c27b1fb07e398b4dc83ef *man/plot.ahull.Rd
 ef33d20071e474c5632f69585d10fc6c *man/plot.delvor.Rd
 d87181cc65a745bca3ff8633b4d7adb8 *man/rkoch.Rd
 336c50a98bbd7a347c6f7ba080190121 *man/rotation.Rd
-53e89188a28fac9cb55f9cd9a2d997bd *man/tricircum.Rd
-df6004c624549fab4bbe107afe7342bf *src/alphahull_init.c
-ff1436ba796ed30f3dbe3bfed301711f *src/delaunaycircum.f
-b2a9d968b906be757e3213d14aee3610 *src/tripack.f
 d3c5e1d35f025efd12666946a0a89a86 *vignettes/alphahull.rnw
 f66f914f6218906365843d10b86894d3 *vignettes/biblioJSS.bib
