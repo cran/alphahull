@@ -1,12 +1,11 @@
 %\VignetteIndexEntry{Generalizing the Convex Hull of a Sample: The R Package alphahull}
-%\VignetteDepends{tripack, sgeostat}
+%\VignetteDepends{interp, sgeostat}
 %\VignetteKeywords{nonparametric}
 %\VignettePackage{alphahull}
 
 \documentclass[nojss]{jss}
-\usepackage[latin1]{inputenc}
 %\usepackage{Sweave}
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -216,10 +215,10 @@ print(plot(delvor(x),col=1:3,xlab="",ylab="",add=T))
 From the computational viewpoint, efficient methods for the computation of Delaunay triangulations and Voronoi diagrams have been developed. \cite{Auren00} presented a review of algorithms, from the earliest intuitive methods to more efficient representations of these geometric structures. For example, the incremental insertion process by \cite{Green78}, the Divide and Conquer method by \cite{Shamos75} or the plane-sweep technique by \cite{Fortune87} are the basis of a large class of worst-case optimal algorithms for computing the whole Voronoi diagram in the plane. Of course, these techniques can also be applied to the computation
 of the Delaunay triangulation. See for example the efficient incremental algorithm by \cite{Lawson77}. Both the Voronoi diagram and the Delaunay triangulation of $n$ points can be computed in $O(n\log n)$ time and linear space. Furthermore, by the duality between the Voronoi diagram and the Delaunay triangulation, either tessellation is easily obtained from a representation of the other in $O(n)$ time.
 
-Currently, there are several libraries available in \proglang{R} that compute the Delaunay triangulation or the Voronoi diagram of a given set of points. See the packages \pkg{deldir} by \cite{deldir} or \pkg{geometry} by \cite{geometry}, among others. These libraries differ on the implemented algorithms and the data structures that store the information. For example, the package \pkg{deldir} computes the Delaunay triangulation and the Voronoi diagram of a planar point set according to the second iterative algorithm of \cite{Lee80}. Unfortunately, this package does not return the kind of data structure we need in order to compute the $\alpha$-shape and the $\alpha$-convex hull. The function \code{deldir} computes the triangulation of a set of points enclosed in a finite rectangular window.  In consequence, the endpoints of the Voronoi edges outside that window are discarded. This fact does not appear to be a problem unless we need to know all the Voronoi edges, as in our case. Note that, in principle, the location of the furthest Voronoi vertex is unknown and enlarging the window size to ensure that the information is complete has a considerable computational cost.  Our package \pkg{alphahull} computes the Delaunay triangulation and the Voronoi diagram with respect to the whole plane. The function \code{delvor} included in the library internally calls the TRIPACK Fortran 77 software package  by \cite{Renka96} that employs an incremental algorithm to construct a constrained Delaunay triangulation of a set of points in the plane. Then, the Voronoi diagram
-is derived via dualization. For each edge of the Delaunay triangulation the corresponding segment in the Voronoi diagram is obtained by connecting the circumcenters of the two neighbour triangles that 
+Currently, there are several libraries available in \proglang{R} that compute the Delaunay triangulation or the Voronoi diagram of a given set of points. See the packages \pkg{deldir} by \cite{deldir} or \pkg{geometry} by \cite{geometry}, among others. These libraries differ on the implemented algorithms and the data structures that store the information. For example, the package \pkg{deldir} computes the Delaunay triangulation and the Voronoi diagram of a planar point set according to the second iterative algorithm of \cite{Lee80}. Unfortunately, this package does not return the kind of data structure we need in order to compute the $\alpha$-shape and the $\alpha$-convex hull. The function \code{deldir} computes the triangulation of a set of points enclosed in a finite rectangular window.  In consequence, the endpoints of the Voronoi edges outside that window are discarded. This fact does not appear to be a problem unless we need to know all the Voronoi edges, as in our case. Note that, in principle, the location of the furthest Voronoi vertex is unknown and enlarging the window size to ensure that the information is complete has a considerable computational cost.  Our package \pkg{alphahull} computes the Delaunay triangulation and the Voronoi diagram with respect to the whole plane. 
+ For each edge of the Delaunay triangulation the corresponding segment in the Voronoi diagram is obtained by connecting the circumcenters of the two neighbour triangles that 
 share that edge. For those edges of the Delaunay triangulation that lie on the boundary of the convex hull, the corresponding segments in the Voronoi diagram are semi-infinite. %The code to compute the triangulation is a straightforward adaptation of
-We compute the triangulation by invoking the function \code{tri.mesh} from package \pkg{tripack}, see  \cite{tripack}. The code to compute the corresponding Voronoi diagram is a corrected version of the function \code{voronoi.mosaic} which is also included in the package \pkg{tripack}. The output of the function \code{delvor} is a list with three components. The first component, \code{mesh}, stores the primal and dual information. For each edge of the Delaunay triangulation \code{mesh} contains the indexes \code{ind1}, \code{ind2} and the coordinates (\code{x1}, \code{y1}), (\code{x2}, \code{y2}) of the sample points that form the edge, the coordinates of the endpoints of the corresponding segment in the Voronoi diagram (\code{mx1}, \code{my1}), (\code{mx2}, \code{my2}), and an indicator that takes the value 1 for those endpoints of the Voronoi edges that represent a boundless extreme, that is, \code{bp1 = 1} if (\code{mx1}, \code{my1}) is a dummy node and the same for \code{bp2}. The second component, \code{x}, stores the sample points and the third component, \code{tri.obj}, stores the information of the Delaunay triangulation obtained from the function \code{tri.mesh}. As an illustration, we have applied the function \code{delvor} to a given set of $n=5$ points. The result is assigned to the object \code{dv} and printed out.
+We compute the triangulation by invoking the function \code{tri.mesh} from package \pkg{interp}, see  \cite{interp}. The code to compute the corresponding Voronoi diagram is a modified version of the function \code{voronoi.mosaic} which is also included in the package \pkg{interp}. The output of the function \code{delvor} is a list with three components. The first component, \code{mesh}, stores the primal and dual information. For each edge of the Delaunay triangulation \code{mesh} contains the indexes \code{ind1}, \code{ind2} and the coordinates (\code{x1}, \code{y1}), (\code{x2}, \code{y2}) of the sample points that form the edge, the coordinates of the endpoints of the corresponding segment in the Voronoi diagram (\code{mx1}, \code{my1}), (\code{mx2}, \code{my2}), and an indicator that takes the value 1 for those endpoints of the Voronoi edges that represent a boundless extreme, that is, \code{bp1 = 1} if (\code{mx1}, \code{my1}) is a dummy node and the same for \code{bp2}. The second component, \code{x}, stores the sample points and the third component, \code{tri.obj}, stores the information of the Delaunay triangulation obtained from the function \code{tri.mesh}. As an illustration, we have applied the function \code{delvor} to a given set of $n=5$ points. The result is assigned to the object \code{dv} and printed out.
 
 <<echo=true>>=
 x <- c(0.905, 0.606, 0.458, 0.988, 0.744)
@@ -473,39 +472,8 @@ Once $C_\alpha(\mathcal{X}_n)^c$ is constructed we can decide whether a given po
 In this document we have described the implementation in \proglang{R} of the $\alpha$-convex hull and of the $\alpha$-shape of a random sample of points in the plane. The package \pkg{alphahull} is the result of that implementation, which is based on efficient algorithms presented by \cite{Edels83}. The $\alpha$-convex hull and the $\alpha$-shape generalize the notion of convex hull and serve to characterize the shape of an unknown set based on random sample of points taken into it. The results obtained by \cite{Rodriguez06} on the behaviour of the $\alpha$-convex hull estimator give us the theoretical basis for using this geometrical construct as a support estimator. 
 
 
-%\bibliographystyle{jss}
-%\nocite{*}
 \bibliography{biblioJSS}
 
 
-%\begin{thebibliography}{11}
-%\bibitem[Aurenhammer (1991)]{Auren91}
-%Aurenhammer, F. (1991). {Voronoi Diagrams - A Survey of a Fundamental Geometric Data Structure}, {\em ACM Comput. Surv.}, 23(3):345-405.
-%\bibitem[Aurenhammer and Klein (2000)]{Auren00}
-%Aurenhammer, F. and  Klein, R. (2000). {Voronoi diagrams}. In {\em Handbook of computational geometry}, 201-290. North-Holland, Amsterdam.
-%\bibitem[Cuevas et al. (2007)]{Cuevas07}
-%Cuevas, A., Fraiman, R., and Rodr{\'{\i}}guez-Casal, A. (2007). {A nonparametric approach to the estimation of lengths and surface
-%	areas}, {\em Ann. Statist.} 35(3):1031-1051
-%\bibitem[Edelsbrunner et al. (1983)]{Edels83}
-%Edelsbrunner, H., Kirkpatrick, D. G. and Seidel, R. (1983). ``On the shape of a set of points in the plane.''
-%{\em IEEE Trans. Inform. Theory}, \textbf{29}(4), 551-559.
-%\bibitem[M{\o}ller (1994)]{Moller94}
-%M{\o}ller, J. (1994). {\em Lectures on random {V}oronoi tessellations}, vol. 87 of {\em Lecture Notes in Statistics}. {Springer-Verlag}, {New York}.
-%\bibitem[Pateiro-L\'{o}pez (2008)]{Pat08}
-%Pateiro-L\'{o}pez, B. (2008). {\em Set estimation under convexity type restrictions}. Phd. Thesis. Universidad de Santiago de Compostela.
-%\bibitem[Pateiro-L\'{o}pez and Rodr\'{i}guez-Casal(2008)]{PatR08}
-%Pateiro-L\'{o}pez, B. and Rodr\'{i}guez-Casal, A. (2008). {Length and surface area estimation under smoothness restrictions}, {\em Adv. Appl. Prob.},  40:348-358.
-%\bibitem[Renka (1996)]{Renka96}
-%Renka, R. J. (1996). {Algorithm 751: TRIPACK: a constrained two-dimensional Delaunay triangulation	package},{\em ACM Trans. Math. Softw.}, 22(1):1-8.
-%\bibitem[Rodr\'{i}guez-Casal (2007)]{Rod07}
-%Rodr\'{i}guez-Casal, A. (2007). Set estimation under convexity type assumptions. {\em Annales de l'I.H.P.- Probabilit\'es \& Statistiques}, 43:763-774.
-%\bibitem[Walther (1999)]{Walther99}
-%Walther, G. (1999). On a generalization of Blaschke's rolling theorem and the smoothing of surfaces. {\em Math. Methods. Appl. Sci.}, 22(4):301-316.
-%\bibitem[Voronoi (1908)]{Vor08}
-%Voronoi, G. (1908). ``Nouvelles applications des  paramètres continus à la théorie des formes quadratiques'', {\em Deuxième mémoire. Recherches sur les paralléloèdres primitifs.}
-%\bibitem[Delaunay (1934)]{Del34}
-%Delaunay, B. N. (1934). ``Sur la sphere vide'', {\em Bull. Acad. Science USSR VII: Class. Sci. Math.},
-%793-800
-%\end{thebibliography}
 
 \end{document}

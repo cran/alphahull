@@ -4,7 +4,7 @@ function (x, add = FALSE, do.shape = FALSE, wlines = c("none",
     xlim = NULL, ylim = NULL, lwd = NULL, ...) 
 {
     wlines <- match.arg(wlines)
-    if (is.null(class(x)) || class(x) != "ahull") {
+    if (is.null(class(x)) || !inherits(x, "ahull")) {
         cat("Argument is not of class ahull.\n")
         return(invisible())
     }

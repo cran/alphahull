@@ -1,7 +1,7 @@
 areaahulleval <-
 function (x) 
 {
-    if (class(x) != "ahull") {
+    if (!inherits(x,"ahull")) {
         cat("Argument is not of class ahull.\n")
         return(invisible())
     }

@@ -10,7 +10,7 @@ dummycoor(tri.obj, l1, l2, m, away)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{tri.obj}{Object of class \code{"tri"}. See \code{\link[tripack]{tri.mesh}} in package \pkg{tripack}.}
+  \item{tri.obj}{Object of class \code{"triSht"}. See \code{\link[interp]{tri.mesh}} in package \pkg{interp}.}
   \item{l1}{ Index of the sample point correponding to one vertex of a triangle of Delaunay that lies on the convex hull, see Details.}
   \item{l2}{ Index of the sample point correponding to other vertex of a triangle of Delaunay that lies on the convex hull, see Details.}
   \item{m}{ Index of the circumcenter of the triangle of Delaunay with one edge on the convex hull.}

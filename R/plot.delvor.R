@@ -3,7 +3,7 @@ function (x, add = FALSE, wlines = c("both", "del", "vor"), wpoints = TRUE,
     number = FALSE, col = NULL, xlim = NULL, ylim = NULL, ...) 
 {
     wlines <- match.arg(wlines)
-    if (is.null(class(x)) || class(x) != "delvor") {
+    if (is.null(class(x)) || !inherits(x, "delvor")) {
         cat("Argument is not of class delvor.\n")
         return(invisible())
     }

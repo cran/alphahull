@@ -1,13 +1,13 @@
 ### R code from vignette source 'alphahull.rnw'
 
 ###################################################
-### code chunk number 1: alphahull.rnw:78-79
+### code chunk number 1: alphahull.rnw:77-78
 ###################################################
 library(alphahull)
 
 
 ###################################################
-### code chunk number 2: alphahull.rnw:119-126
+### code chunk number 2: alphahull.rnw:118-125
 ###################################################
 # Uniform sample of size n=300 in the disc B(c,0.5)\B(c,0.25) 
 # with c=(0.5,0.5).
@@ -19,7 +19,7 @@ alpha<-0.1
 
 
 ###################################################
-### code chunk number 3: alphahull.rnw:132-135
+### code chunk number 3: alphahull.rnw:131-134
 ###################################################
 par(mfrow=c(1,1))
 print(plot(0,type="n",xlim=c(0,1),ylim=c(0,1),xlab="",ylab="",axes=F))
@@ -27,7 +27,7 @@ print(plot(ahull(x,alpha=alpha),col=c(6,1,1),xlab="",ylab="",add=T))
 
 
 ###################################################
-### code chunk number 4: alphahull.rnw:150-153
+### code chunk number 4: alphahull.rnw:149-152
 ###################################################
 par(mfrow=c(1,1))
 print(plot(0,type="n",xlim=c(0,1),ylim=c(0,1),xlab="",ylab="",axes=F))
@@ -35,7 +35,7 @@ print(plot(ashape(x,alpha=alpha),col=c(4,1),xlab="",ylab="",add=T))
 
 
 ###################################################
-### code chunk number 5: alphahull.rnw:162-168
+### code chunk number 5: alphahull.rnw:161-167
 ###################################################
 # Uniform sample of size n=300 in the disc B(c,0.5)\B(c,0.25) 
 # with c=(0.5,0.5).
@@ -46,7 +46,7 @@ x<-cbind(0.5+r*cos(theta),0.5+r*sin(theta))
 
 
 ###################################################
-### code chunk number 6: alphahull.rnw:173-181
+### code chunk number 6: alphahull.rnw:172-180
 ###################################################
 par(mfrow=c(1,3))
 alpha1=0.02
@@ -59,7 +59,7 @@ par(mfrow=c(1,1))
 
 
 ###################################################
-### code chunk number 7: alphahull.rnw:196-200
+### code chunk number 7: alphahull.rnw:195-199
 ###################################################
 #x<-matrix(runif(20),nc=2)
 x1<-c(0.5915,0.6230,0.9689,0.8248,0.9392,0.8156,0.2050,0.9757,0.0957,0.4139)
@@ -68,7 +68,7 @@ x<-cbind(x1,y1)
 
 
 ###################################################
-### code chunk number 8: alphahull.rnw:206-209
+### code chunk number 8: alphahull.rnw:205-208
 ###################################################
 par(mfrow=c(1,1))
 print(plot(0,type="n",xlim=c(0,1),ylim=c(0,1),xlab="",ylab="",axes=F))
@@ -76,7 +76,7 @@ print(plot(delvor(x),col=1:3,xlab="",ylab="",add=T))
 
 
 ###################################################
-### code chunk number 9: alphahull.rnw:224-228
+### code chunk number 9: alphahull.rnw:223-227
 ###################################################
 x <- c(0.905, 0.606, 0.458, 0.988, 0.744)
 y <- c(0.763, 0.937, 0.095, 0.259, 0.731) 
@@ -85,20 +85,20 @@ dv
 
 
 ###################################################
-### code chunk number 10: alphahull.rnw:234-235
+### code chunk number 10: alphahull.rnw:233-234
 ###################################################
 plot(dv, main = "Delaunay triangulation and Voronoi diagram",col = 1:3, xlab = "x-coordinate", ylab = "y-coordinate",xlim = c(-0.5, 1.5), ylim = c(-0.5, 1.5), number = TRUE)
 
 
 ###################################################
-### code chunk number 11: alphahull.rnw:242-244
+### code chunk number 11: alphahull.rnw:241-243
 ###################################################
 par(mfrow=c(1,1))
 print(plot(dv, main = "Delaunay triangulation and Voronoi diagram",col = 1:3, xlab = "x-coordinate", ylab = "y-coordinate",xlim = c(-0.5, 1.5), ylim = c(-0.5, 1.5), number = TRUE))
 
 
 ###################################################
-### code chunk number 12: alphahull.rnw:276-279
+### code chunk number 12: alphahull.rnw:275-278
 ###################################################
 x<-matrix(runif(100),ncol=2)
 alpha <- 0.2
@@ -106,39 +106,39 @@ alphashape <- ashape(x, alpha = alpha)
 
 
 ###################################################
-### code chunk number 13: alphahull.rnw:282-283
+### code chunk number 13: alphahull.rnw:281-282
 ###################################################
 names(alphashape)
 
 
 ###################################################
-### code chunk number 14: alphahull.rnw:288-289
+### code chunk number 14: alphahull.rnw:287-288
 ###################################################
 plot(alphashape, col = c(4, 1), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-shape")))
 
 
 ###################################################
-### code chunk number 15: alphahull.rnw:295-297
+### code chunk number 15: alphahull.rnw:294-296
 ###################################################
 par(mfrow=c(1,1))
 print(plot(alphashape, col = c(4, 1), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-shape"))))
 
 
 ###################################################
-### code chunk number 16: alphahull.rnw:305-306
+### code chunk number 16: alphahull.rnw:304-305
 ###################################################
 plot(alphashape, wlines = "del", col = c(4, 1, 2), xlab = "x-coordinate", ylab = "y-coordinate")
 
 
 ###################################################
-### code chunk number 17: alphahull.rnw:312-314
+### code chunk number 17: alphahull.rnw:311-313
 ###################################################
 par(mfrow=c(1,1))
 print(plot(alphashape, wlines = "del", col = c(4, 1, 2), xlab = "x-coordinate",ylab = "y-coordinate",main = expression(paste(alpha, "-shape and Delaunay triangulation"))))
 
 
 ###################################################
-### code chunk number 18: alphahull.rnw:368-394
+### code chunk number 18: alphahull.rnw:367-393
 ###################################################
 par(mfrow=c(1,1))
 plot(0,type="n",axes=FALSE,xlim=c(0,0.5),ylim=c(0,0.5),xlab="",ylab="")
@@ -169,7 +169,7 @@ text(0.15,0.3,expression(italic(r)),cex=1.5)
 
 
 ###################################################
-### code chunk number 19: alphahull.rnw:403-409
+### code chunk number 19: alphahull.rnw:402-408
 ###################################################
 n <- 200
 theta<-runif(n,0,2*pi)
@@ -180,7 +180,7 @@ alphahull <- ahull(x, alpha = alpha)
 
 
 ###################################################
-### code chunk number 20: alphahull.rnw:412-416
+### code chunk number 20: alphahull.rnw:411-415
 ###################################################
 names(alphahull)
 alphahull$complement[1:5,1:3]
@@ -189,20 +189,20 @@ alphahull$length
 
 
 ###################################################
-### code chunk number 21: alphahull.rnw:422-423
+### code chunk number 21: alphahull.rnw:421-422
 ###################################################
 plot(alphahull, col = c(6, rep(1, 5)), xlab = "x-coordinate",ylab = "y-coordinate", main = expression(paste(alpha, "-hull")))
 
 
 ###################################################
-### code chunk number 22: alphahull.rnw:429-431
+### code chunk number 22: alphahull.rnw:428-430
 ###################################################
 par(mfrow=c(1,1))
 print(plot(alphahull,col=c(6,rep(1,5)), xlab = "x-coordinate",ylab = "y-coordinate", main = expression(paste(alpha, "-hull"))))
 
 
 ###################################################
-### code chunk number 23: alphahull.rnw:439-444
+### code chunk number 23: alphahull.rnw:438-443
 ###################################################
 plot(alphahull, col = c(6, rep(1, 5)), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-hull")))
 warcs<- which(alphahull$arcs[,3]>0)
@@ -212,13 +212,13 @@ arc(alphahull$arcs[i, 1:2], alphahull$arcs[i,3], c(0,1), pi, col = "gray", lty =
 
 
 ###################################################
-### code chunk number 24: alphahull.rnw:449-450
+### code chunk number 24: alphahull.rnw:448-449
 ###################################################
 plot(alphahull, do.shape = TRUE, col = c(6, 4, rep(1, 4)), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-hull and ",alpha, "-shape")))
 
 
 ###################################################
-### code chunk number 25: alphahull.rnw:456-464
+### code chunk number 25: alphahull.rnw:455-463
 ###################################################
 par(mfrow=c(1,2))
 print(plot(alphahull, col = c(6, rep(1, 5)), xlab = "x-coordinate", ylab = "y-coordinate", main = expression(paste(alpha, "-hull"))))

@@ -1,18 +1,15 @@
 % This file was created with JabRef 2.8.1.
 % Encoding: Cp1252
 
-@MANUAL{Rcran,
-  title = {\proglang{R}: A Language and Environment for Statistical Computing},
-  author = {{\proglang{R} Development Core Team}},
-  organization = {\proglang{R} Foundation for Statistical Computing},
-  address = {Vienna, Austria},
-  year = {2008},
-  citeulike-article-id = {708579},
-  keywords = {language, r-language, statistics},
-  posted-at = {2007-03-08 14:30:02},
-  priority = {2},
-  url = {http://www.R-project.org}
-}
+@Manual{Rcran,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2022},
+    url = {https://www.R-project.org/},
+  }
+
 
 @ARTICLE{Auren91,
   author = {Franz Aurenhammer},
@@ -257,7 +254,7 @@
 
 @ARTICLE{Del34,
   author = {Delaunay, B.N.},
-  title = {{Sur la Sphère Vide.}},
+  title = {{Sur la Sph\'{e}re Vide.}},
   journal = {Bull. Acad. Sci. URSS, VII. Ser. },
   year = {1934},
   volume = {1934},
@@ -334,7 +331,7 @@
 }
 
 @ARTICLE{Edels94,
-  author = {Edelsbrunner, Herbert and Mücke, Ernst P.},
+  author = {Edelsbrunner, Herbert and M\"{u}cke, Ernst P.},
   title = {{Three-dimensional Alpha Shapes.}},
   journal = {ACM Trans. Graph. },
   year = {1994},
@@ -406,15 +403,22 @@
   mrreviewer = {M. Iosifescu}
 }
 
-@BOOK{geometry,
-  title = {\pkg{geometry}: Mesh Generation and Surface Tesselation},
-  publisher = {\proglang{R} package version 0.1-4},
-  year = {2008},
-  author = {Raoul Grasman and Robert B. Gramacy},
-  owner = {beatriz},
-  timestamp = {2009.02.19},
-  url = {http://cran.r-project.org/web/packages/geometry/}
-}
+ @Manual{geometry,
+    title = {geometry: Mesh Generation and Surface Tessellation},
+    author = {Kai Habel and Raoul Grasman and Robert B. Gramacy and Pavlo Mozharovskyi and David C. Sterratt},
+    year = {2022},
+    note = {R package version 0.4.6},
+    url = {https://CRAN.R-project.org/package=geometry},
+  }
+
+  @Manual{interp,
+    title = {interp: Interpolation Methods},
+    author = {Albrecht Gebhardt and Roger Bivand and David Sinclair},
+    year = {2022},
+    note = {R package version 1.1-2},
+    url = {https://CRAN.R-project.org/package=interp},
+  }
+
 
 @ARTICLE{Green78,
   author = {Green, P.J. and Sibson, R.},
@@ -444,8 +448,8 @@
 @ARTICLE{koch1904,
   author = {von Koch, H.},
   title = {Sur Une Courbe Continue Sans Tangente, Obtenue Par une Construction
-	Géométrique Élémentaire},
-  journal = {Arkiv för Matematik},
+	G\'{e}om\'{e}trique \'{E}l\'{e}mentaire},
+  journal = {Arkiv f\"{o}r Matematik},
   year = {1904},
   volume = {1},
   pages = {681-704},
@@ -542,93 +546,24 @@
   author = {Okabe, Atsuyuki and Boots, Barry and Sugihara, Kokichi and Chiu,
 	Sung Nok},
   note = {With a Foreword by D. G. Kendall. 2nd ed.},
-  abstract = {{Given a finite set of distinct, isolated points in a continuous space
-	(often the Euclidean plane), we associate all locations in that space
-	with the closest member of the point set. The result is a partitioning
-	of the space into a set of regions. This construction is called a
-	Voronoi diagram, the regions are called Voronoi regions and there
-	exists a lot of different areas where this concept can be applied.
-	This book is a comprehensive exposition of Voronoi diagrams consisting
-	of nine chapters. It is intended for graduate students as an introduction
-	and for researchers who need a thorough reference work. The authors
-	have been able to structure and unify the enormous amount of contributions
-	coming from different disciplines.\par The book starts with an history
-	of the concept of Voronoi diagram and gives some mathematical preliminaries.
-	In Chapter 2 definitions and basic properties of Voronoi diagrams
-	are given. This includes also the related concept of Delaunay triangulation.
-	The Delaunay triangulation can be seen as a dual of the Voronoi diagram.
-	We get it by joining those of the given points of the Voronoi diagram
-	for which the corresponding Voronoi regions are neighbors. Chapter
-	3 deals with generalizations of the Voronoi diagram. Weights on the
-	given set of points can be taken into consideration. Also Voronoi
-	diagram for several points at a time are discussed. They are called
-	higher-order Voronoi diagrams. Further generalizations include farthest-point
-	Voronoi diagrams, the $k$th nearest-point Voronoi diagram, and Voronoi
-	diagrams with obstacles. For the case where the given set consists
-	of lines or areas some results are presented. Another important extension
-	is to look at distances different from the Euclidean distance. Finally
-	network Voronoi diagrams and Voronoi diagrams for moving points are
-	looked at.\par The important topic of algorithms for computing Voronoi
-	diagrams is the contents of Chapter $4$. For the classical planar
-	case three different approaches are described: the incremental method,
-	the divide-and-conquer method and the plane sweep method. Then practical
-	techniques for implementing the algorithms (avoiding numerical errors)
-	are discussed. After that, algorithms for higher-dimensional Voronoi
-	diagrams and for generalized Voronoi diagrams are described. The
-	chapter ends with approximation algorithms. In Chapter 5 Poisson
-	Voronoi diagrams are introduced. The Poisson Voronoi Diagram (PVD)
-	refers to the situation in which points are located in space ``at
-	random" according to the homogeneous Poisson point process. Properties
-	and structural results for the PVD are presented. Then stochastic
-	processes induced by Poisson Voronoi diagrams are discussed. The
-	rest of this chapter deals with extensions analogous to the ones
-	described in Chapter 3. The remaining four chapters concentrate on
-	some important areas of application for Voronoi diagrams. In Chapter
-	6 it is investigated how Voronoi diagrams can been used to facilitate
-	the presentation and analysis of spatial data (values of one or more
-	variables observed at a set of data sites in space). This includes
-	topics like finding neighbor relationships, approximating surfaces
-	and ordering multivariate data.\par Chapter 7 discusses models of
-	spatial processes. At least four types of spatial processes, assignment
-	(Section 7.1), growth (Section 7.2), some spatial temporal processes
-	(Section 7.3) and spatial competition (Section 7.4) can be represented
-	in this way. The application of such models is extensive and examples
-	from areas as diverse as crystallography, solid state physics, biology,
-	astronomy, physiology, archaeology and urban economics are presented.
-	The use of the Voronoi diagram and the Delaunay tessellation in point
-	pattern analysis is described in Chapter 8. First polygon-based and
-	triangle-based methods are presented. Then nearest neighbor distance
-	models are discussed. The question how to facilitate locational optimization
-	through Voronoi diagrams is addressed in the last chapter. When several
-	new facilities have to be located in many models it is required to
-	assign clients to new facilities. This can be done in a very natural
-	way by using Voronoi diagrams. Different aspects of that observation
-	are discussed in this chapter. Topics include locational optimization
-	of points, locational optimization of lines and locational optimization
-	over time. In the second edition some new research directions have
-	been taken into account. Also the already excellent bibliography
-	of the first edition has been greatly expanded to 1680 references.}},
-  classmath = {{*68U05 Computational geometry, etc. 52B05 Combinatorial properties
-	of convex sets 52B55 Computational aspects related to geometric convexity
-	52-02 Research monographs (convex and discrete geometry) 52B12 Special
-	polytopes (linear programming, centrally symmetric, etc.) 68W10 Parallel
-	algorithms 68-02 Research monographs (computer science)}},
-  keywords = {{Voronoi diagrams; Delaunay triangulation; data structurs; computational
+    keywords = {{Voronoi diagrams; Delaunay triangulation; data structurs; computational
 	geometry; algorithms}},
   language = {English},
   reviewer = {{Stefan Nickel (Kaiserslautern)}}
 }
 
-@BOOK{alphahull,
-  title = {\pkg{alphahull}: Generalization of the Convex Hull of a Sample of
-	Points in the Plane},
-  publisher = {\proglang{R} package version 0.2-0},
-  year = {2009},
-  author = {Beatriz Pateiro-L\'{o}pez and Alberto Rodr\'{i}guez-Casal},
-  owner = {beatriz},
-  url = {http://cran.at.r-project.org/web/packages/alphahull/}
+@article{alphahull,
+ title={Generalizing the Convex Hull of a Sample: The R Package alphahull},
+ volume={34},
+ url={https://www.jstatsoft.org/index.php/jss/article/view/v034i05},
+ doi={10.18637/jss.v034.i05},
+ abstract={This paper presents the R package &amp;lt;strong&amp;gt;alphahull&amp;lt;/strong&amp;gt; which implements the a-convex hull and the a-shape of a finite set of points in the plane. These geometric structures provide an informative overview of the shape and properties of the point set. Unlike the convex hull, the a-convex hull and the a-shape are able to reconstruct non-convex sets. This flexibility make them specially useful in set estimation. Since the implementation is based on the intimate relation of theses constructs with Delaunay triangulations, the R package &amp;lt;strong&amp;gt;alphahull&amp;lt;/strong&amp;gt; also includes functions to compute Voronoi and Delaunay tesselations. The usefulness of the package is illustrated with two small simulation studies on boundary length estimation.},
+ number={5},
+ journal={Journal of Statistical Software},
+ author={Pateiro-L\'{o}pez, Beatriz and Rodr\'{i}guez-Casal, Alberto},
+ year={2010},
+ pages={1-28}
 }
-
 @ARTICLE{Pat08,
   author = {Pateiro-L\'{o}pez, Beatriz and Rodr\'{i}guez-Casal, Alberto.},
   title = {Length and Surface Area Estimation under Smoothness Restrictions},
@@ -692,15 +627,7 @@
   publisher = {ACM}
 }
 
-@BOOK{tripack,
-  title = {\pkg{tripack}: Triangulation of Irregularly Spaced Data},
-  publisher = {\proglang{R} package version 1.3-3},
-  year = {2009},
-  author = {Renka, R. J. and Gebhardt, A.},
-  owner = {beatriz},
-  timestamp = {2009.02.19},
-  url = {http://cran.r-project.org/web/packages/tripack/}
-}
+
 
 @ARTICLE{Rodriguez06,
   author = {Rodr\'{i}guez-Casal, Alberto},
@@ -742,47 +669,25 @@
   pages = {151--162}
 }
 
-@BOOK{deldir,
-  title = {\pkg{deldir}: Delaunay Triangulation and Dirichlet (Voronoi) Tessellation},
-  publisher = {\proglang{R} package version 0.0-8},
-  year = {2009},
-  author = {Turner, R},
-  owner = {beatriz},
-  timestamp = {2009.02.19},
-  url = {http://cran.r-project.org/web/packages/deldir/}
-}
+
+  @Manual{deldir,
+    title = {deldir: Delaunay Triangulation and Dirichlet (Voronoi) Tessellation},
+    author = {Rolf Turner},
+    year = {2021},
+    note = {R package version 1.0-6},
+    url = {https://CRAN.R-project.org/package=deldir},
+  }
+
 
 @ARTICLE{Vor08,
   author = {Voronoi, G.},
-  title = {Nouvelles Applications des Paramètres Continus à la Théorie des Formes
-	Quadratiques. Deuxième Mémoire. Recherches sur les Paralléloèdres
+  title = {Nouvelles Applications des Param\`{e}tres Continus \`{a} la Th\'{e}orie des Formes
+	Quadratiques. Deuxi\'{e}me M\'{e}moire. Recherches sur les Parall\'{e}lo\`{e}dres
 	Primitifs.},
   journal = {J. Reine Angew. Math.},
   year = {1908},
   pages = {198-287},
-  abstract = {{Ausgehend von den Arbeiten von {\it Hermite} und {\it Lejeune- Dirichlet},
-	stellt sich der Verf. das Problem, die reduzierten Formen der Klassen
-	positiver quadratischer Formen von $n$ Variablen zu geben, und gelingt
-	dabei zu ähnlichen Resultaten wie {\it Minkowski}. Er definiert hierzu
-	die {\it Paralleloëder}: Alle Punkte, für die $$a_{0k}+\sum_{i---1}^n
-	a_{ik}\ x_i\geqq 0\qquad (k---1,2,\dots , \sigma )$$ ist, bilden
-	ein konvexes Polyeder $R$. Dasselbe heißt Paralleloëder, wenn man
-	mit demselben durch Substitutionen $$x_i---x_i'-\lambda_i\quad (i---1,2,\dots
-	,n) $$ den $n$ dimensionalen Raum gleichmäßig überdecken kann. Seine
-	Ecken sind {\it einfach}, wenn sie nur $(n+1)$ verschiedenen Paralleloëdern
-	angehören. Ein Paralleloëder mit nur einfachen Ecken heißt {\it primitiv},
-	sonst imprimitiv. Über die primitiven Paralleloëder beweist der Verf.
-	das Theorem: Transformiert man dasselbe durch alle reellen linearen
-	Substitutionen $$x_i---\alpha_{i0}+\sum_{k---1}^n \alpha_{ik}x_k'\quad
-	(i---1,2,\dots ,n),$$ so erhält eine Menge von primitiven Paralleloëdern,
-	welche durch eine {\it Klasse} positiver quadratischer Formen eindeutig
-	bestimmt ist, falls man Formen mit proportionalen Koeffizienten als
-	gleich ansieht. (Data of JFM: JFM 39.0274.01; Copyright 2005 Jahrbuch
-	Database used with permission)}},
-  classmath = {{*11E20 General ternary and quaternary quadratic forms}},
-  keywords = {{quadratic forms in many variables; equivalence class of = quadratic
-	forms}},
-  language = {French},
+    language = {French},
   reviewer = {{Fueter, Prof. (Basel)}}
 }
 
